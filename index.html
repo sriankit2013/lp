@@ -1,45 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Special Offer</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Win a $750 Walmart Gift Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<script>
-let time = 900; // seconds (15 minutes)
-const display = document.getElementById('countdown');
+    <div class="bg-animation">
+        <div class="floating-shape shape1"></div>
+        <div class="floating-shape shape2"></div>
+        <div class="floating-shape shape3"></div>
+    </div>
 
-const timer = setInterval(() => {
-  let minutes = Math.floor(time / 60);
-  let seconds = time % 60;
-  seconds = seconds < 10 ? '0' + seconds : seconds;
-  display.textContent = minutes + ":" + seconds;
-  if (time <= 0) clearInterval(timer);
-  time--;
-}, 1000);
-</script>
+    <header>
+        <div class="logo">WALMART <span>REWARDS</span></div>
+        <div class="timer" id="timer">Offer Ends Soon!</div>
+    </header>
 
-  <header class="hero">
-    <h1>Claim Your $1000 Reward</h1>
-    <p class="subtext">Limited time offer — complete our short survey to receive your reward</p>
-    <p class="timer">Offer expires in: <span id="countdown">15:00</span></p>
-    <button id="cta-btn">Start Now</button>
-  </header>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">⚡ LIMITED TIME OFFER</div>
+            <h1>
+                WIN A
+                <span class="amount">$750</span>
+                WALMART GIFT CARD
+            </h1>
+            <p class="subtitle">Your chance to shop for everything you love, completely FREE!</p>
+            <button class="cta-button" onclick="claimOffer()">
+                <span>CLAIM YOUR CHANCE NOW →</span>
+            </button>
+        </div>
+    </section>
 
-  <section class="details">
-    <h2>Your Reward</h2>
-    <p>Redeemable on millions of items.</p>
-  </section>
+    <section class="features">
+        <div class="features-container">
+            <h2 class="section-title">Simple 3-Step Process</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-circle">
+                        <span class="icon-symbol">$</span>
+                    </div>
+                    <h3>Take the Survey</h3>
+                    <p>Answer a few quick questions about your Walmart shopping experience</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-circle">
+                        <span class="icon-symbol">🛒</span>
+                    </div>
+                    <h3>Share Feedback</h3>
+                    <p>Tell us about your shopping preferences and experiences</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-circle">
+                        <span class="icon-symbol">⭐</span>
+                    </div>
+                    <h3>Get Rewarded</h3>
+                    <p>Receive your $750 Walmart gift card after completing the survey</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <p>© 2026 Special Promotion. All rights reserved.</p>
-  </footer>
+    <section class="why-participate">
+        <div class="features-container">
+            <h2 class="section-title">Why Participate?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <p>Get a $750 Walmart gift card</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <p>Instant digital delivery</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <p>Valid at any Walmart location</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <p>No purchase necessary</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <p>Help improve Walmart services</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="how-it-works">
+        <div class="features-container">
+            <h2 class="section-title" style="color: white;">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Click the Button</h3>
+                        <p>Start your entry by clicking the "Claim Your Chance Now" button above or below.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Complete Quick Survey</h3>
+                        <p>Answer a few simple questions to verify your eligibility. Takes less than 2 minutes!</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Get Your Gift Card</h3>
+                        <p>If selected, receive your $750 Walmart gift card and start shopping immediately!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <h2>Don't Miss Out on This Opportunity!</h2>
+        <p>Limited spots available. Enter now before this offer expires.</p>
+        <button class="cta-button" onclick="claimOffer()">
+            <span>ENTER TO WIN NOW →</span>
+        </button>
+    </section>
+
+    <footer>
+        <p>© 2026 Walmart Rewards. This is a promotional landing page example. For official Walmart information, visit walmart.com</p>
+        <p style="margin-top: 10px;">Terms & Conditions | Privacy Policy</p>
+    </footer>
+
+    <!-- Survey Modal -->
+    <div class="survey-overlay" id="surveyOverlay">
+        <div class="survey-modal">
+            <div class="survey-header">
+                <h2>Quick Survey</h2>
+                <p>Answer 5 quick questions to claim your entry!</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span class="question-counter" id="questionCounter">Question 1 of 5</span>
+            </div>
+
+            <div class="survey-content" id="surveyContent">
+                <!-- Question 1 -->
+                <div class="question-slide active" data-question="1">
+                    <h3>How often do you shop at Walmart?</h3>
+                    <div class="options">
+                        <button class="option-btn" onclick="selectAnswer(1, 'Weekly')">
+                            <span class="emoji">🛒</span>
+                            <span>Weekly</span>
+                        </button>
+                        <button class="option-btn" onclick="selectAnswer(1, 'Monthly')">
+                            <span class="emoji">📅</span>
+                            <span>Monthly</span>
+                        </button>
+                        <button class="option-btn" onclick="selectAnswer(1, 'Occasionally')">
+                            <span class="emoji">🌟</span>
+                            <span>Occasionally</span>
+                        </button>
+                        <button class="option-btn" onclick="selectAnswer(1, 'First Time')">
+                            <span class="emoji">✨</span>
+                            <span>First Time</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="question-slide" data-question="2">
+                    <h3>What do you usually shop for?</h3>
+                    <div class="options">
+                        <button class="option-btn" onclick="selectAnswer(2, 'Groceries')">
+                            <span class="emoji">🥗</span>
+                            <span>Groceries</span>
+                        </button>
+                        <button class="option-btn" onclick="selectAnswer(2, 'Electronics')">
+                            <span class="emoji">📱</span>
+                            <span>Electronics</span>
+                        </button>
+                        <button class="option-btn" onclick="selectAnswer(2, 'Home Goods')">
+                            <span class="emoji">🏠</span>
+                            <span>Home Goods</span>
+                        </button>
+                        <button class="option-btn" onclick="selectAnswer(2, 'Everything')">
+                            <span class="emoji">🎯</span>
+                            <span>Everything</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="question-slide" data-question="3">
+                    <h3>How would you use a $750 gift card?</h3>
+                    <div class="options">
+                        <button class="option-btn" onclick="selectAnswer(3, 'Stock up on essentials')">
+                            <span class="emoji">🛍️</span>
+                            <span>Stock up on essentials</span>
+                        </button>
+                        <button class="option-btn" onclick="selectAnswer(3, 'Buy something special')">
+                            <span class="emoji">🎁</span>
+                            <span>Buy something special</span>
+                        </button>
+                        <button class="option-btn" onclick="selectAnswer(3, 'Home improvement')">
+                            <span class="emoji">🔨</span>
+                            <span>Home improvement</span>
+                        </button>
+                        <button class="option-btn" onclick="selectAnswer(3, 'Holiday shopping')">
+                            <span class="emoji">🎄</span>
+                            <span>Holiday shopping</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="question-slide" data-question="4">
+                    <h3>Do you prefer online or in-store shopping?</h3>
+                    <div class="options">
+                        <button class="option-btn" onclick="selectAnswer(4, 'Online only')">
+                            <span class="emoji">💻</span>
+                            <span>Online only</span>
+                        </button>
+                        <button class="option-btn" onclick="selectAnswer(4, 'In-store only')">
+                            <span class="emoji">🏬</span>
+                            <span>In-store only</span>
+                        </button>
+                        <button class="option-btn" onclick="selectAnswer(4, 'Both equally')">
+                            <span class="emoji">⚖️</span>
+                            <span>Both equally</span>
+                        </button>
+                        <button class="option-btn" onclick="selectAnswer(4, 'Depends on item')">
+                            <span class="emoji">🤔</span>
+                            <span>Depends on item</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="question-slide" data-question="5">
+                    <h3>What's most important to you when shopping?</h3>
+                    <div class="options">
+                        <button class="option-btn" onclick="selectAnswer(5, 'Low prices')">
+                            <span class="emoji">💰</span>
+                            <span>Low prices</span>
+                        </button>
+                        <button class="option-btn" onclick="selectAnswer(5, 'Product quality')">
+                            <span class="emoji">⭐</span>
+                            <span>Product quality</span>
+                        </button>
+                        <button class="option-btn" onclick="selectAnswer(5, 'Fast delivery')">
+                            <span class="emoji">🚚</span>
+                            <span>Fast delivery</span>
+                        </button>
+                        <button class="option-btn" onclick="selectAnswer(5, 'Wide selection')">
+                            <span class="emoji">🎪</span>
+                            <span>Wide selection</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Success Screen - Delivery Details -->
+                <div class="question-slide" data-question="success">
+                    <div class="success-content">
+                        <div class="success-icon">🎉</div>
+                        <h3>Survey Complete!</h3>
+                        <p>Thank you for completing the survey!</p>
+                        
+                        <div class="delivery-steps">
+                            <div class="delivery-step">
+                                <div class="step-icon">📍</div>
+                                <div class="step-info">
+                                    <h4>Confirm your delivery details</h4>
+                                    <p>Click the "CONTINUE" button: Let us know where we should send your exclusive $750 Walmart Gift Card.</p>
+                                </div>
+                            </div>
+
+                            <div class="delivery-step">
+                                <div class="step-icon">🎁</div>
+                                <div class="step-info">
+                                    <h4>Unlock your DOUBLE reward</h4>
+                                    <p>Complete our sponsored deals. Each deal that you complete will increase your reward.</p>
+                                </div>
+                            </div>
+
+                            <div class="delivery-step">
+                                <div class="step-icon">🚚</div>
+                                <div class="step-info">
+                                    <h4>Prepare for the reveal</h4>
+                                    <p>Your $750 Walmart Gift Card will be delivered to your home. We guarantee delivery in just 5 days.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="guarantee-badge">
+                            <span class="badge-icon">⭐</span>
+                            <span class="badge-text">100% Satisfaction Guaranteed</span>
+                        </div>
+
+                        <button class="continue-btn" onclick="handleContinue()">
+                            <span>CONTINUE</span>
+                            <span class="btn-arrow">→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
